@@ -1,0 +1,24 @@
+# Sun Optics
+
+> Sun Optics is a luxury eyewear house in India. It designs handcrafted sunglasses and optical frames in Japanese β-titanium and Italian Mazzucchelli acetate, fitted with lenses that block 100% of UVA/UVB. Boutiques in New Delhi, Mumbai and Bengaluru offer free eye tests and 3D face-scan fittings.
+
+## Key facts
+- Category: luxury sunglasses, optical (prescription) frames, prescription lenses
+- Materials: β-titanium, Mazzucchelli acetate; 24-step hand finish; frames under 28 g on average
+- Lenses: 100% UVA/UVB (UV400); polarised, mirror, photochromic and prescription options; tints Bronze, G-15 Green, Ocean Mirror, Rosé, Smoke Grey
+- Warranty: 2 years against manufacturing defects; 14-day return on unworn non-prescription pieces
+- Orders: there is no online checkout. Customers enquire and order through WhatsApp from any product page.
+- Delivery: insured shipping across India
+- Currency: INR (₹), prices include GST
+- Contact: hello@sunoptics.in
+
+## Pages
+- [Home](https://www.sunoptics.in/): brand, craft, lenses, collection, FAQ, boutiques, contact
+- [Shop all](https://www.sunoptics.in/shop): every product, with filters by gender, shape, brand and price
+- [Sunglasses](https://www.sunoptics.in/shop/sunglasses), [Optical frames](https://www.sunoptics.in/shop/frames), [Contact lenses](https://www.sunoptics.in/shop/contact-lenses), [Accessories](https://www.sunoptics.in/shop/accessories), [Kids](https://www.sunoptics.in/shop/kids), [Reading glasses](https://www.sunoptics.in/shop/reading-glasses)
+- [Sale](https://www.sunoptics.in/sale), [Collector's Edition](https://www.sunoptics.in/collectors-edition), [Brands](https://www.sunoptics.in/brands), [Boutiques](https://www.sunoptics.in/boutiques), [Our story](https://www.sunoptics.in/about)
+- Product pages: https://www.sunoptics.in/product/{slug} (see the sitemap)
+- [Full details for LLMs](https://www.sunoptics.in/llms-full.txt): complete product list, specifications and FAQ
+
+## Optional
+- [Sitemap](https://www.sunoptics.in/sitemap.xml)
