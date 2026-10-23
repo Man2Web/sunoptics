@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { LANDINGS } from "@/lib/landings";
 import { CATEGORIES } from "@/lib/products";
-import { PHONE, EMAIL, STORES } from "@/lib/site";
+import { PHONE, EMAIL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
         </div>
         <nav aria-label="Shop"><h4>Shop</h4>{CATEGORIES.map((c) => <Link key={c.slug} href={`/shop/${c.slug}`}>{c.title}</Link>)}</nav>
         <nav aria-label="Discover"><h4>Discover</h4><Link href="/services">Services</Link><Link href="/appointments">Appointments</Link><Link href="/delivery">Home delivery</Link><Link href="/brands">Brands</Link><Link href="/about">About us</Link></nav>
-        <nav aria-label="Branches"><h4>Our branches</h4>{STORES.map((s) => <Link key={s.name} href="/boutiques">{s.area}, Vellore</Link>)}<Link href="/#contact">Contact us</Link><a href="/sitemap.xml">Sitemap</a></nav>
+        <nav aria-label="In Vellore"><h4>In Vellore</h4>{LANDINGS.map((l) => <Link key={l.slug} href={`/vellore/${l.slug}`}>{l.nav}</Link>)}<Link href="/boutiques">All branches</Link><Link href="/#contact">Contact us</Link></nav>
       </div>
       <div className="wrap footer__base"><span>© {new Date().getFullYear()} Sun Optics, Vellore. All rights reserved.</span><span>Open 10:00 AM to 9:00 PM, all week</span></div>
     </footer>

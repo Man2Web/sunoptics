@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Branches() {
-  const ld = { "@context": "https://schema.org", "@graph": STORES.map((s) => ({ "@type": "OpticalStore", name: s.name, url: `${SITE_URL}/boutiques`, parentOrganization: { "@id": `${SITE_URL}/#organization` }, address: { "@type": "PostalAddress", streetAddress: s.address, addressLocality: "Vellore", addressRegion: "Tamil Nadu", addressCountry: "IN" }, telephone: s.phone, openingHours: "Mo-Su 10:00-21:00" })) };
+  const ld = { "@context": "https://schema.org", "@graph": STORES.map((s) => ({ "@type": "Optician", name: s.name, url: `${SITE_URL}/boutiques`, parentOrganization: { "@id": `${SITE_URL}/#organization` }, address: { "@type": "PostalAddress", streetAddress: s.address, addressLocality: "Vellore", addressRegion: "Tamil Nadu", addressCountry: "IN" }, telephone: s.phone, openingHours: "Mo-Su 10:00-21:00" })) };
   return (
     <ShopShell crumbs={[{ name: "Branches" }]} title="Our branches" intro="Two branches in Vellore. Walk in, or call ahead for specialty fittings.">
       <Ld data={crumbLd([{ name: "Branches", path: "/boutiques" }])} />

@@ -8,12 +8,13 @@ import Rail from "@/components/Rail";
 import HeroCarousel, { type Slide } from "@/components/HeroCarousel";
 import Tabs from "@/components/Tabs";
 import { FAQ, EMAIL, PHONE, STORES, HOURS, HOURS_NOTE, LENS_TYPES, jsonLd } from "@/lib/site";
+import { LANDINGS } from "@/lib/landings";
 import { PRODUCTS, SHAPES } from "@/lib/products";
 
 const SLIDES: Slide[] = [
   { tag: "Since December 1999", tone: "sun", img: "/images/frames-rack.jpg", alt: "Rows of eyeglass frames on a display wall",
-    title: <>Caring for Vellore&apos;s eyes since 1999.</>,
-    text: "Eye check-ups by qualified optometrists, trusted eyewear and lens brands, and specialty contact lens fitting.",
+    title: <>Vellore&apos;s trusted optical shop since 1999.</>,
+    text: "Eye tests by qualified optometrists, spectacles, sunglasses and contact lenses from brands you know, plus specialty lens fitting. Two branches in Vellore.",
     cta: ["Book an eye test", "/appointments"], cta2: ["Explore frames", "/shop/frames"], trust: ["Walk-ins welcome", "Free home delivery in Vellore"] },
   { tag: "Eye check-up", tone: "sky", img: "/images/exam-machine.jpg", alt: "Patient having an eye check-up",
     title: <>₹200 eye check-up. Free with purchase.</>,
@@ -76,6 +77,13 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="wrap trustbar" aria-label="Why customers choose us" data-reveal>
+          <div><b>Since 1999</b><span>Serving Vellore</span></div>
+          <div><b>Qualified optometrists</b><span>Eye tests in store</span></div>
+          <div><b>Top global brands</b><span>Eyewear, lenses, contact lenses</span></div>
+          <div><b>Free home delivery</b><span>Vellore and surrounding areas</span></div>
+        </section>
+
         <section className="wrap trio" aria-label="Offers">
           <Link className="promo" href="/appointments"><span className="promo__ico"><IcEye /></span><div><b>₹200 eye check-up</b><span>Free when you buy frames and lenses</span></div></Link>
           <Link className="promo" href="/delivery"><span className="promo__ico"><IcTruck /></span><div><b>Free home delivery</b><span>Vellore and surrounding areas</span></div></Link>
@@ -110,6 +118,17 @@ export default function Home() {
             <ul className="shapes">
               {SHAPES.map((s) => <li key={s.slug}><Link href={`/shop/shape/${s.slug}`}><ShapeArt shape={s.slug} /><span>{s.label}</span></Link></li>)}
             </ul>
+          </div>
+        </section>
+
+        <section className="sec" aria-labelledby="how-h">
+          <div className="wrap">
+            <div className="sec__head sec__head--center" data-reveal><p className="kicker">Simple and unhurried</p><h2 id="how-h" className="h2">How it works</h2></div>
+            <ol className="steps">
+              {[["Book or walk in", "Call, WhatsApp or simply visit either branch between 10 AM and 9 PM."], ["Get your eyes checked", "A qualified optometrist finds the cause of your discomfort. Free when you buy frames and lenses."], ["Choose your eyewear", "Pick frames and lenses from brands like Ray-Ban, Zeiss, Hoya and Essilor, with expert advice."], ["Collect or get it delivered", "Pick up in store, or enjoy free home delivery in Vellore and surrounding areas."]].map(([h, p], i) => (
+                <li key={h} data-reveal><span className="steps__n">{i + 1}</span><b>{h}</b><p>{p}</p></li>
+              ))}
+            </ol>
           </div>
         </section>
 
@@ -152,6 +171,15 @@ export default function Home() {
           <div className="wrap">
             <div className="sec__head sec__head--row"><h2 id="brands-h" className="h2">Brands we carry</h2><Link href="/brands" className="link">All brands</Link></div>
             <BrandGrid compact />
+          </div>
+        </section>
+
+        <section className="sec sec--tint" aria-labelledby="local-h">
+          <div className="wrap">
+            <div className="sec__head" data-reveal><p className="kicker">Eye care in Vellore</p><h2 id="local-h" className="h2">Everything for your eyes, in one place</h2></div>
+            <ul className="locallinks">
+              {LANDINGS.map((l) => <li key={l.slug} data-reveal><Link href={`/vellore/${l.slug}`}><b>{l.nav}</b><span>{l.intro.split(". ")[0]}.</span></Link></li>)}
+            </ul>
           </div>
         </section>
 
