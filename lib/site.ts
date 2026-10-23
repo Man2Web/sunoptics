@@ -23,6 +23,15 @@ export const BRAND_GROUPS: { title: string; brands: string[] }[] = [
   { title: "Specialty contact lens brands", brands: ["Classic Lens", "Silverline", "Menicon", "Boston Scleral Lens"] },
 ];
 
+// Logo files live in /public/brands. Brands without a file are shown as a text wordmark until the official artwork is supplied.
+export const BRAND_LOGOS: Record<string, string> = {
+  "Ray-Ban": "ray-ban.png", "Oakley": "oakley.png", "Calvin Klein": "calvin-klein.png", "Swarovski": "swarovski.png", "Versace": "versace.png",
+  "Giorgio Armani": "giorgio-armani.png", "Armani Exchange": "armani-exchange.png", "Michael Kors": "michael-kors.png", "Montblanc": "montblanc.png",
+  "Jimmy Choo": "jimmy-choo.png", "Maui Jim": "maui-jim.png", "Bvlgari": "bvlgari.png", "Tommy Hilfiger": "tommy-hilfiger.png", "Burberry": "burberry.png",
+  "Coach": "coach.png", "Zeiss": "zeiss.png", "Hoya": "hoya.png", "Essilor": "essilor.png", "CooperVision": "coopervision.jpg",
+  "Bausch + Lomb": "bausch-lomb.png", "Alcon": "alcon.png", "Johnson & Johnson": "johnson-johnson.png", "Menicon": "menicon.png",
+};
+
 export const EYEWEAR_TYPES: [string, string][] = [
   ["Full-frame", "Classic, sturdy frames that surround the lens completely."],
   ["Half-frame", "Lightweight frames with the lens held by a frame on the top edge."],

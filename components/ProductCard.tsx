@@ -1,7 +1,6 @@
 import Link from "next/link";
-import ProductArt from "./ProductArt";
 import WhatsAppLink from "./WhatsAppLink";
-import { discount, type Product } from "@/lib/products";
+import { discount, productImage, type Product } from "@/lib/products";
 import { inr, SITE_URL } from "@/lib/site";
 
 export default function ProductCard({ p }: { p: Product }) {
@@ -10,7 +9,8 @@ export default function ProductCard({ p }: { p: Product }) {
     <article className="pcard">
       <Link href={`/product/${p.slug}`} className="pcard__link" aria-label={`${p.name} by ${p.brand}`}>
         <div className="pcard__art">
-          <ProductArt product={p} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={productImage(p)} alt="" loading="lazy" width="600" height="600" />
           <div className="pcard__badges">
             {d > 0 && <span className="badge badge--sale">Save {d}%</span>}
             {p.collector && <span className="badge badge--dark">Collector&apos;s</span>}

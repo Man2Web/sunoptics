@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "./globals.css";
 
-const sans = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-sans", display: "swap" });
+const sans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-sans", display: "swap" });
 
 const title = "Sun Optics | Opticians in Vellore since 1999";
 const description = "Sun Optics has cared for the eyes of Vellore since December 1999. Eye check-ups by optometrists, frames, lenses, contact lenses and specialty lens fitting at Krishna Nagar and Green Circle.";

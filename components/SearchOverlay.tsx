@@ -32,7 +32,7 @@ export default function SearchOverlay({ open, onClose }: { open: boolean; onClos
     <div className="search" role="dialog" aria-modal="true" aria-label="Search">
       <form className="search__bar" onSubmit={submit} role="search">
         <input ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search sunglasses, frames, brands…" aria-label="Search products" enterKeyHint="search" />
-        <button type="button" onClick={onClose} aria-label="Close search">✕</button>
+        <button type="button" onClick={onClose} aria-label="Close search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg></button>
       </form>
       <div className="search__results">
         {q.trim() && !results.length && <p className="search__empty">No results for “{q}”. Try “aviator”, “titanium” or “kids”.</p>}
