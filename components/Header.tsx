@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import SearchOverlay from "./SearchOverlay";
-import { BRANDS, CATEGORIES, SHAPES, brandSlug } from "@/lib/products";
-import { waLink } from "@/lib/site";
+import { CATEGORIES, SHAPES } from "@/lib/products";
+import { waLink, PHONE } from "@/lib/site";
 
 type Col = { title: string; links: [string, string][] };
 type Item = { key: string; label: string; href: string; cols?: Col[] };
@@ -13,27 +13,15 @@ const SHAPE_LINKS: [string, string][] = SHAPES.map((s) => [s.label, `/shop/shape
 
 const ITEMS: Item[] = [
   { key: "shop", label: "Shop", href: "/shop", cols: [
-    { title: "Featured brands", links: [...BRANDS.slice(0, 6).map((b): [string, string] => [b, `/brands/${brandSlug(b)}`]), ["All brands", "/brands"]] },
     { title: "By gender", links: GENDER },
     { title: "By type", links: CATEGORIES.map((c): [string, string] => [c.title, `/shop/${c.slug}`]) },
     { title: "By style", links: SHAPE_LINKS },
   ] },
-  { key: "brands", label: "Brands", href: "/brands", cols: [
-    { title: "A – H", links: BRANDS.filter((b) => b[0] <= "H").map((b): [string, string] => [b, `/brands/${brandSlug(b)}`]) },
-    { title: "K – V", links: BRANDS.filter((b) => b[0] > "H").map((b): [string, string] => [b, `/brands/${brandSlug(b)}`]) },
-  ] },
-  { key: "sun", label: "Sunglasses", href: "/shop/sunglasses", cols: [
-    { title: "Sunglasses", links: [["All sunglasses", "/shop/sunglasses"], ["Women", "/shop/for/women"], ["Men", "/shop/for/men"], ["Kids", "/shop/kids"]] },
-    { title: "Featured styles", links: SHAPE_LINKS },
-    { title: "Top picks", links: [["Collector's Edition", "/collectors-edition"], ["Sale", "/sale"], ["Accessories", "/shop/accessories"]] },
-  ] },
-  { key: "opt", label: "Opticals", href: "/shop/frames", cols: [
-    { title: "Frames", links: [["All frames", "/shop/frames"], ["Reading glasses", "/shop/reading-glasses"], ["Kids", "/shop/kids"]] },
-    { title: "Featured styles", links: SHAPE_LINKS },
-    { title: "Lenses", links: [["Contact lenses", "/shop/contact-lenses"], ["Lens care", "/shop/accessories"]] },
-  ] },
-  { key: "sale", label: "Sale", href: "/sale" },
-  { key: "col", label: "Collector's Edition", href: "/collectors-edition" },
+  { key: "brands", label: "Brands", href: "/brands" },
+  { key: "services", label: "Services", href: "/services" },
+  { key: "appt", label: "Appointments", href: "/appointments" },
+  { key: "delivery", label: "Home delivery", href: "/delivery" },
+  { key: "branches", label: "Branches", href: "/boutiques" },
 ];
 
 export default function Header() {
@@ -63,10 +51,10 @@ export default function Header() {
     <>
       <header className={`nav${scrolled ? " is-scrolled" : ""}`} id="nav" onMouseLeave={hide}>
         <div className="nav__bar">
-          <p>Order by WhatsApp · Insured delivery across India · 2-year warranty</p>
+          <p>Call or WhatsApp {PHONE} · Free home delivery in Vellore · Open 10 AM to 9 PM</p>
           <div>
-            <Link href="/about">Our story</Link>
-            <Link href="/boutiques">Our boutiques</Link>
+            <Link href="/about">About</Link>
+            <Link href="/boutiques">Our branches</Link>
           </div>
         </div>
         <div className="nav__main">
@@ -97,8 +85,8 @@ export default function Header() {
               ))}
             </ul>
             <div className="nav__util">
-              <Link href="/about" onClick={nav}>Our story</Link>
-              <Link href="/boutiques" onClick={nav}>Our boutiques</Link>
+              <Link href="/about" onClick={nav}>About</Link>
+              <Link href="/boutiques" onClick={nav}>Our branches</Link>
             </div>
           </nav>
 
@@ -106,7 +94,7 @@ export default function Header() {
             <button className="nav__icon" aria-label="Search" onClick={() => setSearch(true)}>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
             </button>
-            <a className="nav__wa" href={waLink("Hello Sun Optics, I'd like to enquire about your eyewear.")} target="_blank" rel="noopener noreferrer">Enquire</a>
+            <a className="nav__wa" href={waLink("Hello Sun Optics, I'd like to enquire.")} target="_blank" rel="noopener noreferrer">Enquire</a>
             <button className="nav__toggle" aria-label="Menu" aria-expanded={open} aria-controls="navLinks" onClick={() => setOpen(!open)}><i /><i /></button>
           </div>
         </div>

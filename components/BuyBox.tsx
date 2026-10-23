@@ -38,8 +38,8 @@ export default function BuyBox({ p }: { p: Product }) {
         </div>
         <p className="pdp__note">Chat with a stylist for availability, prescription lenses and a fitting. No online payment needed.</p>
         <ul className="perks">
-          <li>Insured delivery across India</li>
-          <li>2-year warranty · 14-day returns</li>
+          <li>Free home delivery in Vellore and surrounding areas</li>
+          <li>Call or WhatsApp to confirm availability</li>
           <li>Prescription lenses fitted on request</li>
         </ul>
       </div>

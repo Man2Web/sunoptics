@@ -1,26 +1,23 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ShopShell from "@/components/ShopShell";
 import Ld from "@/components/Ld";
-import { BRANDS, PRODUCTS, brandSlug } from "@/lib/products";
-import { crumbLd } from "@/lib/site";
+import { BRAND_GROUPS, crumbLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Brands",
-  description: "The labels we carry at Sun Optics: Sun Optics, Atelier Nord, Kōyō, Maison Vela, Orrin & Hale and more.",
+  description: "Eyewear, lens, contact lens and specialty lens brands at Sun Optics, Vellore: Ray-Ban, Oakley, Zeiss, Hoya, Essilor, CooperVision, Bausch + Lomb and more.",
   alternates: { canonical: "/brands" },
 };
 
 export default function Brands() {
-  const groups = BRANDS.reduce<Record<string, string[]>>((acc, b) => { const k = b[0].toUpperCase(); (acc[k] ||= []).push(b); return acc; }, {});
   return (
-    <ShopShell crumbs={[{ name: "Brands" }]} title="Brands" intro="A short, curated list of makers we trust.">
+    <ShopShell crumbs={[{ name: "Brands" }]} title="Brands" intro="Eyewear, lenses and contact lenses from names you know.">
       <Ld data={crumbLd([{ name: "Brands", path: "/brands" }])} />
-      <div className="az">
-        {Object.entries(groups).map(([letter, bs]) => (
-          <section key={letter} aria-labelledby={`l-${letter}`}>
-            <h2 id={`l-${letter}`}>{letter}</h2>
-            <ul>{bs.map((b) => <li key={b}><Link href={`/brands/${brandSlug(b)}`}>{b}</Link><span>{PRODUCTS.filter((p) => p.brand === b).length} products</span></li>)}</ul>
+      <div className="brandgroups">
+        {BRAND_GROUPS.map((g) => (
+          <section key={g.title} aria-labelledby={`bg-${g.title}`}>
+            <h2 id={`bg-${g.title}`} className="h3">{g.title}</h2>
+            <ul className="chips">{g.brands.map((b) => <li key={b}>{b}</li>)}</ul>
           </section>
         ))}
       </div>

@@ -8,7 +8,7 @@ import { crumbLd, productListLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shop Luxury Sunglasses, Frames & Contact Lenses",
-  description: "Shop Sun Optics: luxury sunglasses, optical frames, kids' eyewear, reading glasses, contact lenses and accessories. Order by WhatsApp enquiry.",
+  description: "Browse sunglasses, optical frames, kids' eyewear, reading glasses, contact lenses and accessories at Sun Optics, Vellore. Enquire by WhatsApp.",
   alternates: { canonical: "/shop" },
 };
 

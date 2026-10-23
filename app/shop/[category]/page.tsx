@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { category } = await params;
   const c = CATEGORIES.find((x) => x.slug === category);
   if (!c) return {};
-  return { title: `${c.title} | Luxury Eyewear India`, description: `${c.blurb} Shop ${c.title.toLowerCase()} from Sun Optics by WhatsApp enquiry.`, alternates: { canonical: `/shop/${c.slug}` } };
+  return { title: `${c.title} | Sun Optics Vellore`, description: `${c.blurb} Shop ${c.title.toLowerCase()} from Sun Optics by WhatsApp enquiry.`, alternates: { canonical: `/shop/${c.slug}` } };
 }
 
 export default async function Category({ params }: { params: Promise<Params> }) {
