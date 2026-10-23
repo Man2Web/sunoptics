@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!p) return {};
   return {
     title: `${p.name} by ${p.brand}`,
-    description: `${p.desc} ₹${p.price.toLocaleString("en-IN")}. Order by WhatsApp. 2-year warranty.`,
+    description: `${p.desc} ₹${p.price.toLocaleString("en-IN")}. Enquire by WhatsApp.`,
     alternates: { canonical: `/product/${p.slug}` },
     openGraph: { type: "website", title: `${p.name} | ${SITE_NAME}`, description: p.desc, url: `/product/${p.slug}` },
   };

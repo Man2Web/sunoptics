@@ -1,72 +1,38 @@
-# Sun Optics — full reference
+# Sun Optics: full reference
 
-Sun Optics is a luxury eyewear house in India (sunoptics.in). Tagline: "See the world in a new light."
+Sun Optics is an optician in Vellore, Tamil Nadu, serving the community since December 1999.
 
-## Signature collection (prices in INR, incl. GST)
-| Product | Type | Material | Price |
-|---|---|---|---|
-| Aurelia Aviator | Sunglasses | β-titanium, polarised G-15 lenses, double bridge | ₹24,900 |
-| Monaco Square | Sunglasses | Mazzucchelli acetate, gold-inlaid temple | ₹18,500 |
-| Kyoto Round | Optical frame | Japanese titanium, 12 g | ₹29,800 |
-| Savoy Cat-Eye | Sunglasses | Layered tortoise acetate | ₹21,400 |
-| Meridian Navigator | Sunglasses | Pilot-inspired, ocean-mirror lenses | ₹26,900 |
-| Solstice Shield | Sunglasses | Wraparound, 24k gold-tone titanium trim; limited to 250 pieces | ₹32,500 |
+## About
+Founded by Mr. Balaji, a qualified optometrist (trained 1988 at the Regional Institute of Ophthalmology, Egmore; began at L V Prasad Eye Institute and Lawrence & Mayo; later Al Jabir Opticians, Doha). Mr. Yashwanth Balaji, B.Optom (2023), completed a contact lens fellowship at Sankara Nethralaya, Chennai, and joined in July 2026, bringing specialty contact lens and vision therapy expertise. Sun Optics has organised school eye screenings and cataract surgery camps, alone and with the Jaycees, Lions Club and Rotary Club.
 
-## Craft
-- Frame: single-block acetate or forged β-titanium, tumbled 72 hours, 24-step hand polish, under 28 g, hypoallergenic and nickel-free.
-- Temple: flex core wire, 8° splay, anti-slip acetate tips, free lifetime adjustment in boutique.
-- Hinge: 5-barrel spring hinge in gold-plated steel, tested to 20,000 cycles.
+## Brands
+- Eyewear: Ray-Ban, Oakley, Calvin Klein, Swarovski, Versace, Giorgio Armani, Armani Exchange, Michael Kors, Montblanc, Jimmy Choo, Maui Jim, Bvlgari, Tommy Hilfiger, Burberry, Police, Coach, David Jones
+- Lenses: Zeiss, Hoya, Essilor
+- Contact lenses: CooperVision, Bausch + Lomb, Alcon, Johnson & Johnson
+- Specialty contact lenses: Classic Lens, Silverline, Menicon, Boston Scleral Lens
 
-## Lenses
-100% UVA/UVB protection. Options: polarised, mirror, photochromic, prescription (single-vision, progressive). Coatings: anti-reflective, oleophobic, scratch-resistant. Tints: Bronze (warm contrast, driving), G-15 Green (true colour, low glare), Ocean Mirror (blue flash, water/snow), Rosé Gradient (soft, city), Smoke Grey (neutral, photography).
+## Categories
+- Eyewear: full-frame, half-frame, rimless, designer, branded, kids', sunglasses, sports, computer glasses
+- Lenses: progressive, blue-cut, photochromic, anti-glare, myopia control
+- Contact lenses: soft (daily, monthly, extended wear), toric, multifocal, coloured, specialty (corneal RGP, scleral, orthokeratology)
 
-## Boutiques
-New Delhi (Khan Market), Mumbai (Bandra West), Bengaluru (Indiranagar). Open daily 11am–9pm. Services: free eye test, 3D face scan, same-day adjustments, virtual fitting for other cities.
+## Services
+- Eye check-up by an optometrist; hospital referral only when a medical examination is needed
+- Nose pad change, frame alignment, lens replacement, frame replacement, detailed eyewear and lens consultation
+- Corneal RGP lenses (keratoconus, corneal irregularities, high powers); scleral lenses (keratoconus, irregular corneas, severe dry eyes); orthokeratology (overnight lenses to reshape the cornea and help control myopia); vision therapy and orthoptics evaluation
+- Trial lenses are available in store; the final specialty lens is custom-made after fitting
+
+## Appointments and fees
+Walk-ins welcome for routine check-ups, frames and lenses. Book ahead for keratoconus or corneal irregularity fittings, specialty contact lenses and vision therapy. Eye check-up ₹200, free with a purchase of frames and lenses. Call or WhatsApp +91 95665 14555.
+
+## Branches (10:00 AM to 9:00 PM, all week; Sunday timings may vary)
+- Krishna Nagar (since 1999): TKT Complex, 1, Officer's Line, near Lakshmi Theatre, opp. Allen Solly showroom, Krishna Nagar, Veerasamy Nagar, Vellore, Tamil Nadu 632001
+- Green Circle: 6/1, Katpadi Main Road, Green Circle, Vellore, Tamil Nadu 632004
+
+## Home delivery
+Free within Vellore and surrounding areas; courier service for outer regions. Arrange via +91 95665 14555.
 
 ## FAQ
-Q: How do I order? A: There is no online checkout. Open a product and tap Enquire on WhatsApp; a stylist confirms availability, prescription options and delivery.
-Q: What makes Sun Optics frames different? A: Hand-polished β-titanium or Mazzucchelli acetate, 24-step finish, optical-grade lenses with UV400 protection.
-Q: Prescription sunglasses? A: Yes — single-vision, progressive or photochromic after a free eye consultation.
-Q: Polarised and UV protected? A: All sunglass lenses block 100% UVA/UVB; polarised, mirror and photochromic available.
-Q: Warranty and returns? A: 2-year warranty; 14-day return on unworn non-prescription pieces.
-Q: Delivery across India? A: Yes, insured shipping across India.
-
-Contact: hello@sunoptics.in
-
-## Full catalogue (INR, incl. GST)
-| Product | Brand | Category | For | Material | Price | URL |
-|---|---|---|---|---|---|---|
-| Aurelia Aviator | Sun Optics | sunglasses | men | β-titanium | ₹24,900 | https://www.sunoptics.in/product/aurelia-aviator |
-| Monaco Square | Sun Optics | sunglasses | unisex | Mazzucchelli acetate | ₹18,500 | https://www.sunoptics.in/product/monaco-square |
-| Savoy Cat-Eye | Sun Optics | sunglasses | women | Tortoise acetate | ₹21,400 | https://www.sunoptics.in/product/savoy-cat-eye |
-| Meridian Navigator | Sun Optics | sunglasses | men | β-titanium | ₹26,900 | https://www.sunoptics.in/product/meridian-navigator |
-| Solstice Shield | Sun Optics | sunglasses | unisex | Gold-tone titanium | ₹32,500 | https://www.sunoptics.in/product/solstice-shield |
-| Nord Pilot | Atelier Nord | sunglasses | men | Stainless steel | ₹28,900 | https://www.sunoptics.in/product/nord-pilot |
-| Vela Papillon | Maison Vela | sunglasses | women | Acetate | ₹33,900 | https://www.sunoptics.in/product/vela-papillon |
-| Hanami Round | Kōyō | sunglasses | unisex | Japanese titanium | ₹36,500 | https://www.sunoptics.in/product/hanami-round |
-| Drift Rectangle | Halden | sunglasses | men | Acetate | ₹17,900 | https://www.sunoptics.in/product/drift-rectangle |
-| Sol Square | Veridian | sunglasses | women | Bio-acetate | ₹15,600 | https://www.sunoptics.in/product/sol-square |
-| Riviera Cat-Eye | Aster & Co | sunglasses | women | Acetate | ₹19,900 | https://www.sunoptics.in/product/riviera-cat-eye |
-| Marlow Square | Orrin & Hale | sunglasses | men | Acetate | ₹23,400 | https://www.sunoptics.in/product/marlow-square |
-| Atelier No. 7 | Maison Vela | sunglasses | unisex | 18k gold-plated titanium | ₹118,900 | https://www.sunoptics.in/product/atelier-no-7 |
-| Tsuki Round | Kōyō | sunglasses | unisex | Buffalo horn & titanium | ₹94,500 | https://www.sunoptics.in/product/tsuki-round |
-| Ember Square | Orrin & Hale | sunglasses | men | Hand-carved acetate | ₹76,000 | https://www.sunoptics.in/product/ember-square |
-| Kyoto Round | Sun Optics | frames | unisex | Japanese titanium | ₹29,800 | https://www.sunoptics.in/product/kyoto-round |
-| Archive Rectangle | Halden | frames | men | Acetate | ₹14,900 | https://www.sunoptics.in/product/archive-rectangle |
-| Lune Cat-Eye | Maison Vela | frames | women | Acetate | ₹16,900 | https://www.sunoptics.in/product/lune-cat-eye |
-| Clerk Square | Orrin & Hale | frames | unisex | Acetate | ₹13,500 | https://www.sunoptics.in/product/clerk-square |
-| Pantos Round | Aster & Co | frames | unisex | Acetate | ₹12,400 | https://www.sunoptics.in/product/pantos-round |
-| Fine-Wire Aviator | Atelier Nord | frames | men | Stainless steel | ₹15,900 | https://www.sunoptics.in/product/fine-wire-aviator |
-| Reader Round | Bellweather | reading-glasses | unisex | Acetate | ₹4,900 | https://www.sunoptics.in/product/reader-round |
-| Reader Square | Bellweather | reading-glasses | unisex | Acetate | ₹5,200 | https://www.sunoptics.in/product/reader-square |
-| Bounce Round | Lumen Kids | kids | kids | Flexible TR-90 | ₹5,900 | https://www.sunoptics.in/product/bounce-round |
-| Orbit Square | Lumen Kids | kids | kids | Flexible TR-90 | ₹6,400 | https://www.sunoptics.in/product/orbit-square |
-| Sunny Shades | Lumen Kids | kids | kids | Flexible TR-90 | ₹4,900 | https://www.sunoptics.in/product/sunny-shades |
-| Daily Clear (30) | Sun Optics | contact-lenses | unisex | Silicone hydrogel | ₹1,800 | https://www.sunoptics.in/product/daily-clear-30 |
-| Monthly Comfort (6) | Sun Optics | contact-lenses | unisex | Silicone hydrogel | ₹2,400 | https://www.sunoptics.in/product/monthly-comfort-6 |
-| Colour Tint (2) | Sun Optics | contact-lenses | unisex | Hydrogel | ₹1,500 | https://www.sunoptics.in/product/colour-tint-2 |
-| Travel Case | Sun Optics | accessories | unisex | Vegan leather | ₹1,900 | https://www.sunoptics.in/product/travel-case |
-| Microfibre Set (3) | Sun Optics | accessories | unisex | Microfibre | ₹600 | https://www.sunoptics.in/product/microfibre-set-3 |
-| Lens Care Kit | Sun Optics | accessories | unisex | Spray + cloth | ₹900 | https://www.sunoptics.in/product/lens-care-kit |
-| Chain Strap | Maison Vela | accessories | women | Gold-plated brass | ₹1,400 | https://www.sunoptics.in/product/chain-strap |
-| Magnetic Clip-On | Sun Optics | accessories | unisex | Titanium + polarised lens | ₹3,900 | https://www.sunoptics.in/product/magnetic-clip-on |
+- Do I need a hospital visit for an eye check-up? No; our optometrists check your eyes in store and refer you only when needed.
+- Check-up fee? ₹200, free with frames and lenses.
+- Appointment needed? Not for routine visits; recommended for specialty fittings and vision therapy.

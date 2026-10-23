@@ -1,36 +1,60 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import Experience from "@/components/Experience";
-import Glasses2D from "@/components/Glasses2D";
-import LensPicker from "@/components/LensPicker";
 import ContactForm from "@/components/ContactForm";
 import ProductCard from "@/components/ProductCard";
-import ProductArt, { ShapeArt } from "@/components/ProductArt";
+import { ShapeArt } from "@/components/ProductArt";
+import BrandGrid from "@/components/BrandGrid";
 import Rail from "@/components/Rail";
-import HeroCarousel from "@/components/HeroCarousel";
+import HeroCarousel, { type Slide } from "@/components/HeroCarousel";
 import Tabs from "@/components/Tabs";
-import WhatsAppLink from "@/components/WhatsAppLink";
-import { FAQ, EMAIL, STORES, HOURS, jsonLd } from "@/lib/site";
-import { BRANDS, PRODUCTS, SHAPES, brandSlug, bySlug } from "@/lib/products";
+import { FAQ, EMAIL, PHONE, STORES, HOURS, HOURS_NOTE, LENS_TYPES, jsonLd } from "@/lib/site";
+import { PRODUCTS, SHAPES } from "@/lib/products";
 
-const STEPS = [
-  { scene: "frame", side: "right", n: "01", h: "The frame", p: "Cut from a single block of Mazzucchelli acetate or forged from β-titanium, then tumbled for 72 hours and hand-polished in 24 steps until the surface looks wet.", ticks: ["Under 28 g, all-day comfort", "Hypoallergenic, nickel-free", "24-step hand finish"] },
-  { scene: "temple", side: "left", n: "02", h: "The temple", p: "Core-wire temples follow the skull instead of pinching it. A gentle 8° splay and soft-touch tips keep the fit secure for a run, a drive or a long flight.", ticks: ["Flex core wire", "Anti-slip acetate tips", "Adjusted in-boutique, free for life"] },
-  { scene: "hinge", side: "right", n: "03", h: "The hinge", p: "Five-barrel spring hinges in gold-plated steel, tested to 20,000 open-close cycles. You feel it in the click; you stop noticing it in a week.", ticks: ["5-barrel spring hinge", "20,000-cycle tested", "2-year warranty"] },
+const SLIDES: Slide[] = [
+  { tag: "Since December 1999", tone: "sun", img: "/images/frames-rack.jpg", alt: "Rows of eyeglass frames on a display wall",
+    title: <>Caring for Vellore&apos;s eyes since 1999.</>,
+    text: "Eye check-ups by qualified optometrists, trusted eyewear and lens brands, and specialty contact lens fitting.",
+    cta: ["Book an eye test", "/appointments"], cta2: ["Explore frames", "/shop/frames"], trust: ["Walk-ins welcome", "Free home delivery in Vellore"] },
+  { tag: "Eye check-up", tone: "sky", img: "/images/exam-machine.jpg", alt: "Patient having an eye check-up",
+    title: <>₹200 eye check-up. Free with purchase.</>,
+    text: "No hospital visit needed. Our optometrists find the cause of your discomfort and recommend the right solution.",
+    cta: ["Book now", "/appointments"], cta2: ["How it works", "/services"] },
+  { tag: "Specialty lenses", tone: "mint", img: "/images/eye-closeup.jpg", alt: "Close-up of an eye",
+    title: <>Scleral, RGP and Ortho-K lenses.</>,
+    text: "Advanced contact lens fitting and vision therapy led by Mr. Yashwanth Balaji, B.Optom.",
+    cta: ["Our specialty services", "/services"], cta2: ["Book a fitting", "/appointments"] },
+  { tag: "Home delivery", tone: "rose", img: "/images/lens-glasses.jpg", alt: "Eyeglasses on a display stand",
+    title: <>Glasses delivered to your door.</>,
+    text: "Free home delivery within Vellore and surrounding areas, with courier service for outer regions.",
+    cta: ["Arrange delivery", "/delivery"], cta2: ["Call us", `tel:${PHONE.replace(/\s/g, "")}`] },
 ];
 
-const PROMOS = [
-  { tag: "New", title: "Hanami Round", word: "NEW", text: "Hand-bent titanium. 14 grams.", href: "/product/hanami-round", cta: "Discover", tone: "ink", shape: "round" },
-  { tag: "Collector\u2019s Edition", title: "Numbered. Rare. Yours.", word: "RARE", text: "Gold-plated titanium, buffalo horn, hand-carved acetate.", href: "/collectors-edition", cta: "View the edition", tone: "gold", shape: "aviator" },
-  { tag: "Sale", title: "Up to 22% off.", word: "SALE", text: "End-of-season offers on selected frames.", href: "/sale", cta: "Shop the sale", tone: "red", shape: "square" },
-  { tag: "Contact lenses", title: "See clearly. Daily.", word: "CLEAR", text: "Daily and monthly lenses, fitted after a free eye test.", href: "/shop/contact-lenses", cta: "Shop lenses", tone: "blue", shape: "round" },
-  { tag: "Boutiques", title: "Try them in person.", word: "VISIT", text: "Free eye test and 3D face scan in Delhi, Mumbai and Bengaluru.", href: "/boutiques", cta: "Find a boutique", tone: "light", shape: "cat-eye" },
-] as const;
+const Ic = ({ children }: { children: React.ReactNode }) => (
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{children}</svg>
+);
+const IcEye = () => <Ic><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" /><circle cx="12" cy="12" r="3" /></Ic>;
+const IcTruck = () => <Ic><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></Ic>;
+const IcPin = () => <Ic><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></Ic>;
+const LENS_ICONS: React.ReactNode[] = [
+  <Ic key="p"><path d="M4 7h16M4 12h12M4 17h8" /></Ic>,
+  <Ic key="b"><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M8 21h8M12 17v4" /></Ic>,
+  <Ic key="ph"><circle cx="12" cy="12" r="4" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4" /></Ic>,
+  <Ic key="a"><path d="M3 15l2-6h14l2 6M3 15h18v3H3zM7 18v2M17 18v2" /></Ic>,
+  <Ic key="m"><path d="M12 3l8 3v5c0 5-3.5 8.500-8 10-4.500-1.500-8-5-8-10V6z" /></Ic>,
+];
+
+const CATS: { label: string; href: string; img: string }[] = [
+  { label: "Eyeglasses", href: "/shop/frames", img: "/photos/frame-black-a.jpg" },
+  { label: "Sunglasses", href: "/shop/sunglasses", img: "/photos/sun-aviator-gold.jpg" },
+  { label: "Contact lenses", href: "/shop/contact-lenses", img: "/images/eye-closeup.jpg" },
+  { label: "Kids' eyewear", href: "/shop/kids", img: "/photos/frame-black-b.jpg" },
+  { label: "Reading glasses", href: "/shop/reading-glasses", img: "/photos/reading-book.jpg" },
+  { label: "Eye check-up", href: "/appointments", img: "/images/exam-machine.jpg" },
+];
 
 export default function Home() {
   const best = PRODUCTS.filter((p) => p.best && p.category !== "accessories").slice(0, 8);
   const fresh = PRODUCTS.filter((p) => p.isNew).slice(0, 8);
-  const collector = PRODUCTS.filter((p) => p.collector).slice(0, 3);
   const rail = (list: typeof PRODUCTS, label: string) => (
     <Rail label={label}>{list.map((p) => <div className="rail__item" key={p.slug}><ProductCard p={p} /></div>)}</Rail>
   );
@@ -40,57 +64,39 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <a className="skip" href="#main">Skip to content</a>
 
-      <div className="loader" id="loader" aria-hidden="true">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="loader__logo" src="/logo-white.png" alt="" width="96" height="89" />
-        <div className="loader__mark">Sun<span>Optics</span></div>
-        <div className="loader__bar"><i /></div>
-      </div>
-      <div className="progress" aria-hidden="true"><i id="progress" /></div>
-
-      <Experience />
-
       <main id="main">
-        {/* 1 · HERO: full-width banner carousel (slide 1 shows the 3D model) */}
-        <section className="hero" id="hero" aria-labelledby="h1">
-          <HeroCarousel
-            slides={[...PROMOS]}
-            intro={
-              <div className="wrap hslide__inner">
-                <div className="hslide__text">
-                  <p className="hero__eyebrow"><i />Luxury eyewear · India</p>
-                  <h1 id="h1" className="display hero__h1">
-                    <span className="hl"><span className="w" style={{ "--i": 0 } as React.CSSProperties}>See</span> <span className="w" style={{ "--i": 1 } as React.CSSProperties}>the</span> <span className="w" style={{ "--i": 2 } as React.CSSProperties}>world</span></span>
-                    <span className="hl"><span className="w" style={{ "--i": 3 } as React.CSSProperties}>in</span> <em className="w" style={{ "--i": 4 } as React.CSSProperties}>a</em> <em className="w" style={{ "--i": 5 } as React.CSSProperties}>new</em> <em className="w" style={{ "--i": 6 } as React.CSSProperties}>light.</em></span>
-                  </h1>
-                  <p className="lede">Hand-finished titanium and Italian acetate frames, fitted with lenses engineered for clarity.</p>
-                  <div className="hero__cta">
-                    <Link className="btn btn--lg" href="/shop">Browse the collection</Link>
-                    <WhatsAppLink className="btn btn--ghost" icon={false} label="Enquire on WhatsApp" text="Hello Sun Optics, I'd like to know more about your eyewear." />
-                  </div>
-                  <ul className="hero__trust">
-                    <li>Free eye test</li><li>Insured delivery</li><li>2-year warranty</li>
-                  </ul>
-                </div>
-                <div className="hslide__art hslide__art--hero">
-                  <div className="hero__halo" aria-hidden="true" />
-                  <Glasses2D glare reflect tint="#4a3218" className="hero-glasses" />
-                  <span className="fchip fchip--a"><b>β-titanium</b>28 g</span>
-                  <span className="fchip fchip--b"><b>UV400</b>Polarised</span>
-                  <span className="fchip fchip--c"><b>24 steps</b>Hand finish</span>
-                </div>
-              </div>
-            }
-          />
+        <section className="hero" aria-label="Welcome">
+          <div className="wrap">
+            <HeroCarousel slides={SLIDES} />
+            <nav className="catrow" aria-label="Shop by category">
+              {CATS.map((c) => (
+                <Link key={c.label} href={c.href}><span className="catrow__ico"><img src={c.img} alt="" loading="lazy" width="240" height="240" /></span>{c.label}</Link>
+              ))}
+            </nav>
+          </div>
         </section>
 
-        {/* 3 · FEATURED PICKS */}
-        <section className="band--light sec" aria-labelledby="feat-h">
-          <div className="wrap sec__head sec__head--row">
-            <h2 id="feat-h" className="h2">Featured picks.</h2>
-            <Link href="/shop" className="link">Shop all ›</Link>
-          </div>
+        <section className="wrap trio" aria-label="Offers">
+          <Link className="promo" href="/appointments"><span className="promo__ico"><IcEye /></span><div><b>₹200 eye check-up</b><span>Free when you buy frames and lenses</span></div></Link>
+          <Link className="promo" href="/delivery"><span className="promo__ico"><IcTruck /></span><div><b>Free home delivery</b><span>Vellore and surrounding areas</span></div></Link>
+          <Link className="promo" href="/boutiques"><span className="promo__ico"><IcPin /></span><div><b>Two branches in Vellore</b><span>Open 10 AM to 9 PM, all week</span></div></Link>
+        </section>
+
+        <section className="sec" aria-labelledby="tiles-h">
           <div className="wrap">
+            <div className="sec__head"><h2 id="tiles-h" className="h2">What are you looking for?</h2></div>
+            <div className="tiles">
+              <Link className="tile" href="/shop/frames"><img src="/images/frames-rack.jpg" alt="" loading="lazy" /><div className="tile__t"><b>Eyeglasses</b><span>Full-frame, half-frame, rimless</span><i>Shop now</i></div></Link>
+              <Link className="tile" href="/appointments"><img src="/images/exam-machine.jpg" alt="" loading="lazy" /><div className="tile__t"><b>Eye check-up</b><span>By qualified optometrists</span><i>Book now</i></div></Link>
+              <Link className="tile" href="/services"><img src="/images/eye-closeup.jpg" alt="" loading="lazy" /><div className="tile__t"><b>Contact lenses</b><span>Soft, toric, scleral, Ortho-K</span><i>Know more</i></div></Link>
+              <Link className="tile" href="/services"><img src="/images/lens-glasses.jpg" alt="" loading="lazy" /><div className="tile__t"><b>Lenses</b><span>Progressive, blue-cut, photochromic</span><i>Explore</i></div></Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="sec sec--tint" aria-labelledby="feat-h">
+          <div className="wrap">
+            <div className="sec__head sec__head--row"><h2 id="feat-h" className="h2">Featured picks</h2><Link href="/shop" className="link">View all</Link></div>
             <Tabs panels={[
               { id: "best", label: "Best sellers", node: rail(best, "Best sellers") },
               { id: "new", label: "New arrivals", node: rail(fresh, "New arrivals") },
@@ -98,137 +104,103 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4 · FRAME EDIT */}
-        <section className="band--light band--grey sec" aria-labelledby="edit-h">
+        <section className="sec" aria-labelledby="shape-h">
           <div className="wrap">
-            <div className="sec__head"><h2 id="edit-h" className="h2">Discover your <em>frame edit.</em></h2></div>
-            <div className="edit">
-              <Link href="/shop/for/men" className="edit__tile edit__tile--a"><span>Men</span><ProductArt product={bySlug("aurelia-aviator")!} /></Link>
-              <Link href="/shop/for/women" className="edit__tile edit__tile--b"><span>Women</span><ProductArt product={bySlug("savoy-cat-eye")!} /></Link>
-              <Link href="/shop/kids" className="edit__tile edit__tile--c"><span>Kids</span><ProductArt product={bySlug("bounce-round")!} /></Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 5 · SHOP BY SHAPE */}
-        <section className="band--light sec" aria-labelledby="shape-h">
-          <div className="wrap">
-            <div className="sec__head"><h2 id="shape-h" className="h2">Shop by <em>shape.</em></h2></div>
+            <div className="sec__head"><h2 id="shape-h" className="h2">Shop by frame shape</h2></div>
             <ul className="shapes">
-              {SHAPES.map((s) => (
-                <li key={s.slug}><Link href={`/shop/shape/${s.slug}`}><ShapeArt shape={s.slug} /><span>{s.label}</span></Link></li>
-              ))}
+              {SHAPES.map((s) => <li key={s.slug}><Link href={`/shop/shape/${s.slug}`}><ShapeArt shape={s.slug} /><span>{s.label}</span></Link></li>)}
             </ul>
           </div>
         </section>
 
-        {/* 6 · CRAFT */}
-        <section className="band--dark sec craft" id="craft" aria-labelledby="craft-h">
-          <div className="wrap">
-            <div className="sec__head sec__head--center">
-              <p className="kicker" data-reveal>The craft</p>
-              <h2 id="craft-h" className="h2" data-reveal>Three details, <em>obsessively made.</em></h2>
+        <section className="sec sec--tint">
+          <div className="wrap split">
+            <img className="split__img" src="/images/exam-machine.jpg" alt="Patient having an eye check-up" loading="lazy" width="1800" height="1200" />
+            <div className="split__text">
+              <p className="kicker">Eye check-up</p>
+              <h2 className="h2">See an optometrist, not a hospital.</h2>
+              <p className="body-l">Routine eye check-ups happen right here in the store. We find the cause of your visual discomfort and recommend the right solution. If a medical examination is needed, we refer you to a hospital ourselves.</p>
+              <ul className="ticks"><li>₹200, free when you buy frames and lenses</li><li>Walk-ins always welcome</li><li>Hospital referral only when truly required</li></ul>
+              <Link className="btn" href="/appointments">Book an appointment</Link>
             </div>
-            <div className="features">
-              {STEPS.map((s) => (
-                <article key={s.n} className="feature">
-                  <span className="step__n">{s.n}</span>
-                  <h3>{s.h}</h3>
-                  <p>{s.p}</p>
-                  <ul className="ticks">{s.ticks.map((t) => <li key={t}>{t}</li>)}</ul>
-                </article>
+          </div>
+        </section>
+
+        <section className="sec" aria-labelledby="lens-h">
+          <div className="wrap">
+            <div className="sec__head sec__head--center"><p className="kicker">Lens technologies</p><h2 id="lens-h" className="h2">Lenses to match your lifestyle</h2></div>
+            <div className="lensgrid">
+              {LENS_TYPES.map(([t, d], i) => <div className="lensc" key={t}><i aria-hidden="true">{LENS_ICONS[i]}</i><b>{t}</b><span>{d}</span></div>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="sec sec--tint">
+          <div className="wrap split split--flip">
+            <img className="split__img" src="/images/eye-closeup.jpg" alt="Close-up of an eye" loading="lazy" width="1800" height="1200" />
+            <div className="split__text">
+              <p className="kicker">Specialty contact lenses</p>
+              <h2 className="h2">Advanced care for every eye.</h2>
+              <p className="body-l">Mr. Yashwanth Balaji leads corneal RGP, scleral and orthokeratology lens fittings, plus vision therapy and orthoptics evaluation. Trial lenses are available in store; the final lens is custom-made after fitting.</p>
+              <ul className="ticks"><li>Corneal RGP for keratoconus and high powers</li><li>Scleral lenses for irregular corneas and dry eyes</li><li>Ortho-K overnight lenses to help control myopia</li></ul>
+              <Link className="btn" href="/services">Explore services</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="sec" aria-labelledby="brands-h">
+          <div className="wrap">
+            <div className="sec__head sec__head--row"><h2 id="brands-h" className="h2">Brands we carry</h2><Link href="/brands" className="link">All brands</Link></div>
+            <BrandGrid compact />
+          </div>
+        </section>
+
+        <section className="sec sec--navy" aria-label="Sun Optics in numbers">
+          <div className="wrap stats">
+            <div className="stat"><b>1999</b><span>Serving Vellore since</span></div>
+            <div className="stat"><b>2</b><span>Branches in Vellore</span></div>
+            <div className="stat"><b>30+</b><span>Years of founder experience</span></div>
+            <div className="stat"><b>Free</b><span>Home delivery in Vellore</span></div>
+          </div>
+        </section>
+
+        <section className="sec" id="boutiques" aria-labelledby="b-h">
+          <div className="wrap">
+            <div className="sec__head sec__head--row"><div><p className="kicker">Visit us</p><h2 id="b-h" className="h2">Our branches in Vellore</h2></div><Link href="/boutiques" className="link">Details</Link></div>
+            <div className="stores">
+              {STORES.map((s) => (
+                <div className="store" key={s.name}>
+                  {s.since && <span className="tag">Since {s.since}</span>}
+                  <h3>{s.name}</h3>
+                  <p>{s.address}</p>
+                  <p><b>{HOURS}*</b></p>
+                  <p><a className="link" href={`tel:${s.phone.replace(/\s/g, "")}`}>{s.phone}</a>{s.mapUrl && <> · <a className="link" href={s.mapUrl} target="_blank" rel="noopener noreferrer">Directions</a></>}</p>
+                </div>
               ))}
             </div>
+            <p className="cart__meta" style={{ marginTop: ".8rem" }}>*{HOURS_NOTE}</p>
           </div>
         </section>
 
-        {/* 7 · LENSES */}
-        <section className="band--dark sec lenses" id="lenses" aria-labelledby="lenses-h">
-          <div className="wrap">
-            <div className="sec__head sec__head--center">
-              <p className="kicker" data-reveal>The lenses</p>
-              <h2 id="lenses-h" className="h2" data-reveal>Choose your <em>light.</em></h2>
-              <p className="body-l" data-reveal>Every lens blocks 100% of UVA and UVB. Pick a tint to preview it. Prescription, polarised and photochromic versions are available for every tint.</p>
-            </div>
-            <LensPicker />
-            <table className="spec spec--dark" aria-label="Lens specifications">
-              <tbody>
-                <tr><th scope="row">UV protection</th><td>100% UVA / UVB (UV400)</td></tr>
-                <tr><th scope="row">Options</th><td>Polarised, mirror, photochromic, prescription</td></tr>
-                <tr><th scope="row">Coatings</th><td>Anti-reflective, oleophobic, scratch-resistant</td></tr>
-              </tbody>
-            </table>
+        <section className="sec sec--tint" id="faq" aria-labelledby="faq-h">
+          <div className="wrap faq">
+            <div><p className="kicker">Good to know</p><h2 id="faq-h" className="h2">Frequently asked questions</h2><p className="body-l">Everything you need to know before you visit.</p></div>
+            <div className="faq__list">{FAQ.map(([q, a], i) => <details key={q} open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}</div>
           </div>
         </section>
 
-        {/* 8 · BRANDS */}
-        <section className="band--light sec" aria-labelledby="brands-h">
-          <div className="wrap">
-            <div className="sec__head sec__head--row">
-              <h2 id="brands-h" className="h2">This season&apos;s <em>bestsellers.</em></h2>
-              <Link href="/brands" className="link">All brands ›</Link>
-            </div>
-            <ul className="brandtiles">
-              {BRANDS.map((b) => (
-                <li key={b}><Link href={`/brands/${brandSlug(b)}`}><strong>{b}</strong><span>{PRODUCTS.filter((p) => p.brand === b).length} styles ›</span></Link></li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* 9 · COLLECTOR'S EDITION */}
-        <section className="band--dark sec" aria-labelledby="col-h">
-          <div className="wrap">
-            <div className="sec__head sec__head--row">
-              <div>
-                <p className="kicker">Collector&apos;s Edition</p>
-                <h2 id="col-h" className="h2">Handpicked pieces. <em>Numbered runs.</em></h2>
-                <p className="body-l">Rare materials, hand-finished, delivered in a presentation case. Once a run is sold, it is retired.</p>
-              </div>
-              <Link href="/collectors-edition" className="link link--dark">View all ›</Link>
-            </div>
-            <div className="pgrid pgrid--dark">{collector.map((p) => <ProductCard key={p.slug} p={p} />)}</div>
-          </div>
-        </section>
-
-        {/* 10 · BOUTIQUES */}
-        <section className="band--dark boutiques" id="boutiques" aria-labelledby="b-h">
-          <div className="wrap boutiques__inner">
-            <p className="kicker" data-reveal>Boutiques</p>
-            <h2 id="b-h" className="h2" data-reveal>Try them <em>in person.</em></h2>
-            <p className="body-l" data-reveal>Each boutique offers a free eye test, a 3D face scan to pick the right fit, and same-day adjustments.</p>
-            <ul className="stores" data-reveal>
-              {STORES.map((x) => <li key={x.city}><h3>{x.city}</h3><p>{x.area} · {HOURS}</p></li>)}
-            </ul>
-          </div>
-        </section>
-
-        {/* 11 · FAQ */}
-        <div className="band--light"><section className="faq wrap" id="faq" aria-labelledby="faq-h">
-          <div className="faq__intro">
-            <p className="kicker" data-reveal>Eyewear guide</p>
-            <h2 id="faq-h" className="h2" data-reveal>Questions, <em>answered.</em></h2>
-            <p className="body-l" data-reveal>Everything you need to know before you choose a pair.</p>
-          </div>
-          <div className="faq__list" data-reveal>
-            {FAQ.map(([q, a], i) => (
-              <details key={q} open={i === 0}><summary>{q}</summary><p>{a}</p></details>
-            ))}
-          </div>
-        </section></div>
-
-        {/* 12 · CONTACT */}
-        <div className="band--light"><section className="contact wrap" id="contact" aria-labelledby="c-h">
-          <div className="contact__card">
+        <section className="sec" id="contact" aria-labelledby="c-h">
+          <div className="wrap cband">
             <div>
-              <p className="kicker" data-reveal>Book a fitting</p>
-              <h2 id="c-h" className="h2" data-reveal>Let&apos;s find <em>your pair.</em></h2>
-              <p className="body-l" data-reveal>Tell us what you&apos;re after and a stylist will reply on WhatsApp, usually within the hour.</p>
-              <p className="contact__mail" data-reveal><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+              <p className="kicker">Contact us</p>
+              <h2 id="c-h" className="h2">One number for everything</h2>
+              <p className="body-l">Call or WhatsApp for enquiries, appointments, orders and order status, follow-ups, home delivery and courier, or any other question.</p>
+              <a className="cband__tel" href={`tel:${PHONE.replace(/\s/g, "")}`}>{PHONE}</a>
+              {EMAIL && <a className="cband__mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>}
             </div>
             <ContactForm />
           </div>
-        </section></div>
+        </section>
       </main>
 
       <Footer />

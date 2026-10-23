@@ -1,24 +1,29 @@
 # Sun Optics
 
-> Sun Optics is a luxury eyewear house in India. It designs handcrafted sunglasses and optical frames in Japanese β-titanium and Italian Mazzucchelli acetate, fitted with lenses that block 100% of UVA/UVB. Boutiques in New Delhi, Mumbai and Bengaluru offer free eye tests and 3D face-scan fittings.
+> Sun Optics is an optician in Vellore, Tamil Nadu, caring for eyes since December 1999. It offers eye check-ups by optometrists, eyewear, lenses, contact lenses, and specialty contact lens fitting (corneal RGP, scleral, orthokeratology) and vision therapy. Two branches: Krishna Nagar and Green Circle.
 
 ## Key facts
-- Category: luxury sunglasses, optical (prescription) frames, prescription lenses
-- Materials: β-titanium, Mazzucchelli acetate; 24-step hand finish; frames under 28 g on average
-- Lenses: 100% UVA/UVB (UV400); polarised, mirror, photochromic and prescription options; tints Bronze, G-15 Green, Ocean Mirror, Rosé, Smoke Grey
-- Warranty: 2 years against manufacturing defects; 14-day return on unworn non-prescription pieces
-- Orders: there is no online checkout. Customers enquire and order through WhatsApp from any product page.
-- Delivery: insured shipping across India
-- Currency: INR (₹), prices include GST
-- Contact: hello@sunoptics.in
+- Founder: Mr. Balaji, optometrist with over three decades of experience; Mr. Yashwanth Balaji, B.Optom, leads specialty contact lens and vision therapy services
+- Eye check-up: ₹200, free when frames and lenses are purchased; walk-ins welcome
+- Appointments recommended for keratoconus and corneal irregularity fittings, specialty contact lenses and vision therapy
+- Timings: 10:00 AM to 9:00 PM, all week (Sunday timings may vary; call to confirm)
+- Home delivery: free within Vellore and surrounding areas; courier service for outer regions
+- Contact: +91 95665 14555 (call or WhatsApp)
+- Orders and enquiries are handled by call or WhatsApp; there is no online checkout
+
+## Branches
+- Sun Optics, Krishna Nagar Branch (since 1999): TKT Complex, 1, Officer's Line, near Lakshmi Theatre, opp. Allen Solly showroom, Krishna Nagar, Veerasamy Nagar, Vellore, Tamil Nadu 632001
+- Sun Optics, Green Circle: 6/1, Katpadi Main Road, Green Circle, Vellore, Tamil Nadu 632004
 
 ## Pages
-- [Home](https://www.sunoptics.in/): brand, craft, lenses, collection, FAQ, boutiques, contact
-- [Shop all](https://www.sunoptics.in/shop): every product, with filters by gender, shape, brand and price
-- [Sunglasses](https://www.sunoptics.in/shop/sunglasses), [Optical frames](https://www.sunoptics.in/shop/frames), [Contact lenses](https://www.sunoptics.in/shop/contact-lenses), [Accessories](https://www.sunoptics.in/shop/accessories), [Kids](https://www.sunoptics.in/shop/kids), [Reading glasses](https://www.sunoptics.in/shop/reading-glasses)
-- [Sale](https://www.sunoptics.in/sale), [Collector's Edition](https://www.sunoptics.in/collectors-edition), [Brands](https://www.sunoptics.in/brands), [Boutiques](https://www.sunoptics.in/boutiques), [Our story](https://www.sunoptics.in/about)
-- Product pages: https://www.sunoptics.in/product/{slug} (see the sitemap)
-- [Full details for LLMs](https://www.sunoptics.in/llms-full.txt): complete product list, specifications and FAQ
+- [Home](https://www.sunoptics.in/)
+- [About](https://www.sunoptics.in/about)
+- [Services](https://www.sunoptics.in/services)
+- [Appointments](https://www.sunoptics.in/appointments)
+- [Home delivery](https://www.sunoptics.in/delivery)
+- [Brands](https://www.sunoptics.in/brands)
+- [Branches](https://www.sunoptics.in/boutiques)
+- [Shop](https://www.sunoptics.in/shop)
 
 ## Optional
 - [Sitemap](https://www.sunoptics.in/sitemap.xml)

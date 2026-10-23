@@ -77,6 +77,20 @@ export const PRODUCTS: Product[] = [
   P("Magnetic Clip-On", "Sun Optics", "accessories", "unisex", "rectangular", "Titanium + polarised lens", 3900, "Polarised clip-on that snaps onto your optical frame.", [C("Smoke", T, SMOKE), C("Green", T, GREEN)]),
 ];
 
+/** Photo for a product card (placeholder photography until the real catalogue is supplied). */
+const hash = (s: string) => Array.from(s).reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+export const productImage = (p: Product): string => {
+  const pick = (a: string[]) => `/photos/${a[hash(p.slug) % a.length]}.jpg`;
+  if (p.category === "contact-lenses") return "/images/eye-closeup.jpg";
+  if (p.category === "accessories") return "/photos/case.jpg";
+  if (p.category === "reading-glasses") return pick(["reading-book", "reading-clubmaster"]);
+  if (p.category === "kids") return pick(["frame-black-a", "frame-black-b"]);
+  if (p.category === "frames") return pick(p.shape === "round" ? ["frame-black-a", "frame-black-b", "frame-black-c"] : ["reading-book", "reading-clubmaster", "frame-black-c"]);
+  if (p.shape === "aviator") return pick(["sun-aviator-gold", "sun-aviator-silver"]);
+  if (p.shape === "cat-eye") return pick(["sun-cateye-black", "sun-cateye-tort"]);
+  if (p.shape === "round") return pick(["sun-aviator-silver", "frame-round-silver"]);
+  return pick(["sun-square-grey", "sun-aviator-gold"]);
+};
 export const bySlug = (slug: string) => PRODUCTS.find((p) => p.slug === slug);
 export const isEyewear = (p: Product) => p.category === "sunglasses" || p.category === "frames" || p.category === "kids" || p.category === "reading-glasses";
 export const isClear = (p: Product) => p.category !== "sunglasses" && !(p.category === "kids" && p.name === "Sunny Shades");
