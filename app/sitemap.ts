@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { CATEGORIES, PRODUCTS, SHAPES } from "@/lib/products";
+import { LANDINGS } from "@/lib/landings";
 
 export const dynamic = "force-static";
 
@@ -13,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...CATEGORIES.map((c) => e(`/shop/${c.slug}`, 0.8)),
     e("/shop/for/men", 0.7), e("/shop/for/women", 0.7),
     ...SHAPES.map((x) => e(`/shop/shape/${x.slug}`, 0.6)),
-    e("/brands", 0.6), e("/services", 0.7), e("/appointments", 0.7), e("/delivery", 0.5),
+    ...LANDINGS.map((l) => e(`/vellore/${l.slug}`, 0.9, "monthly")), e("/brands", 0.6), e("/services", 0.7), e("/appointments", 0.7), e("/delivery", 0.5),
     ...PRODUCTS.map((p) => e(`/product/${p.slug}`, 0.7)),
     e("/boutiques", 0.5, "monthly"), e("/about", 0.4, "monthly"),
   ];

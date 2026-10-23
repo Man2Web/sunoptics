@@ -82,7 +82,7 @@ export const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "OpticalStore"], "@id": `${SITE_URL}/#organization`, name: SITE_NAME, url: SITE_URL,
+      "@type": ["Organization", "Optician"], "@id": `${SITE_URL}/#organization`, name: SITE_NAME, url: SITE_URL,
       logo: `${SITE_URL}/logo-black.png`,
       description: "Sun Optics is an optician in Vellore, Tamil Nadu, caring for eyes since December 1999: eye check-ups by optometrists, frames, lenses, contact lenses and specialty contact lens fitting.",
       foundingDate: "1999-12", slogan: TAGLINE, currenciesAccepted: "INR",
@@ -90,10 +90,20 @@ export const jsonLd = {
       address: { "@type": "PostalAddress", streetAddress: STORES[0].address, addressLocality: "Vellore", addressRegion: "Tamil Nadu", postalCode: "632001", addressCountry: "IN" },
       ...(EMAIL ? { email: EMAIL } : {}),
       ...(PHONE ? { telephone: PHONE } : {}),
+      openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "10:00", closes: "21:00" },
+      hasOfferCatalog: { "@type": "OfferCatalog", name: "Eye care services in Vellore", itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Eye test and eye check-up in Vellore", description: "Eye check-up by a qualified optometrist. Free with purchase of frames and lenses." }, price: "200", priceCurrency: "INR" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Spectacles and eyeglasses" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sunglasses with or without power" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Contact lenses, including corneal RGP, scleral and orthokeratology fitting" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Vision therapy and orthoptics evaluation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Free home delivery in Vellore" } },
+      ] },
+      department: STORES.map((s) => ({ "@type": "Optician", name: s.name, telephone: s.phone, address: { "@type": "PostalAddress", streetAddress: s.address, addressLocality: "Vellore", addressRegion: "Tamil Nadu", addressCountry: "IN" }, openingHours: "Mo-Su 10:00-21:00" })),
       knowsAbout: ["Eye check-ups", "Optical frames", "Sunglasses", "Prescription lenses", "Contact lenses", "Scleral lenses", "Orthokeratology", "Vision therapy"],
     },
     { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: SITE_NAME, inLanguage: "en-IN", publisher: { "@id": `${SITE_URL}/#organization` } },
-    { "@type": "WebPage", "@id": `${SITE_URL}/#webpage`, url: SITE_URL, name: "Sun Optics | Opticians in Vellore since 1999", isPartOf: { "@id": `${SITE_URL}/#website` }, about: { "@id": `${SITE_URL}/#organization` }, inLanguage: "en-IN" },
+    { "@type": "WebPage", "@id": `${SITE_URL}/#webpage`, url: SITE_URL, name: "Best Optical Shop in Vellore | Sun Optics: Eye Test, Spectacles & Contact Lenses", isPartOf: { "@id": `${SITE_URL}/#website` }, about: { "@id": `${SITE_URL}/#organization` }, inLanguage: "en-IN" },
     {
       "@type": "ItemList", name: "Sun Optics featured eyewear",
       itemListElement: PRODUCTS.filter((p) => p.featured).map((p, i) => ({
